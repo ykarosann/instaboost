@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visualizar Dados</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #e1306c;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    span {
+      color: #f77;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #e1306c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>📋 Dados Salvos no Navegador</h2>
+  <div class="card">
+    <p><strong>Usuário:</strong> <span id="v_usuario"></span></p>
+    <p><strong>Senha:</strong> <span id="v_senha"></span></p>
+    <p><strong>Quantidade:</strong> <span id="v_quantidade"></span></p>
+  </div>
+  <a href="index.html">⬅ Voltar</a>
+
+  <script>
+    document.getElementById("v_usuario").textContent = localStorage.getItem("usuario") || "Nenhum";
+    document.getElementById("v_senha").textContent = localStorage.getItem("senha") || "Nenhum";
+    document.getElementById("v_quantidade").textContent = localStorage.getItem("quantidade") || "Nenhum";
+  </script>
+</body>
+</html>

